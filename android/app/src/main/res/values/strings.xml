@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Mogoword</string>
+    <string name="title_activity_main">Mogoword</string>
+    <string name="package_name">com.example.mogoword</string>
+    <string name="custom_url_scheme">com.example.mogoword</string>
+</resources>

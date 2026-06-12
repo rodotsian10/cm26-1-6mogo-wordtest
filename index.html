@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>청명고 6모 단어장</title>
+    <!-- Cute Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="app" class="app-container">
+      <!-- Top Navigation / Header -->
+      <header class="app-header">
+        <button id="btn-home" class="nav-btn hide">🏠 홈으로</button>
+        <h1 id="app-title">✨ 청명고 6모 단어장 ✨</h1>
+        <div class="header-spacer"></div>
+      </header>
+
+      <!-- Main Content Area -->
+      <main id="main-content" class="content-area">
+        <!-- Chapter Selection View -->
+        <section id="view-home" class="view active">
+          <p class="subtitle">어떤 단어를 외워볼까요? 💖</p>
+          <button id="btn-all-words" class="cute-btn primary block">📖 전체 단어장 보기</button>
+          
+          <div class="chapter-grid" id="chapter-list">
+            <!-- Chapter buttons will be generated here -->
+          </div>
+          
+          <div class="footer-msg">
+            <p>유의어 반의어 기부받습니다 연락주세요ㅜㅜ</p>
+            <a href="https://instagram.com/rodotsian_unity" target="_blank" class="insta-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.036 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+              </svg>
+              @rodotsian_unity
+            </a>
+            <p style="font-size: 0.8rem; margin-top: 8px; color: #aaa;">⚠️ 무단, 2차 배포를 금합니다.</p>
+          </div>
+        </section>
+
+        <!-- Mode Selection View -->
+        <section id="view-mode-select" class="view">
+          <h2 id="selected-chapter-title" class="chapter-title">21번</h2>
+          <p class="subtitle">학습 모드를 선택하세요!</p>
+          <div class="mode-buttons">
+            <button class="cute-btn mode-btn" data-mode="flashcard">🃏 플래시카드</button>
+            <button class="cute-btn mode-btn" data-mode="quiz">📝 객관식 퀴즈</button>
+            <button class="cute-btn mode-btn" data-mode="spelling">⌨️ 스펠링 맞추기</button>
+          </div>
+        </section>
+
+        <!-- All Words View -->
+        <section id="view-all-words" class="view">
+          <h2>📖 전체 단어장</h2>
+          <div class="all-words-list" id="all-words-container">
+            <!-- All words will be generated here -->
+          </div>
+        </section>
+
+        <!-- Flashcard View -->
+        <section id="view-flashcard" class="view">
+          <div class="progress-bar-container"><div class="progress-bar" id="fc-progress"></div></div>
+          <p class="progress-text" id="fc-progress-text">1 / 10</p>
+          
+          <div class="flashcard-container" id="flashcard">
+            <div class="flashcard-inner">
+              <div class="flashcard-front">
+                <span class="word-en" id="fc-word-en">Word</span>
+                <p class="tap-hint">터치해서 뜻 확인하기</p>
+              </div>
+              <div class="flashcard-back">
+                <span class="word-ko" id="fc-word-ko">단어 뜻</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="fc-controls">
+            <button id="btn-fc-skip" class="cute-btn secondary">🤔 모르겠어요 (넘기기)</button>
+            <button id="btn-fc-next" class="cute-btn primary">알아요 (다음) ▶</button>
+          </div>
+        </section>
+
+        <!-- Quiz View -->
+        <section id="view-quiz" class="view">
+          <div class="progress-bar-container"><div class="progress-bar" id="qz-progress"></div></div>
+          <p class="progress-text" id="qz-progress-text">1 / 10</p>
+          
+          <div class="quiz-card">
+            <h3 class="quiz-word" id="qz-word-en">Word</h3>
+          </div>
+          
+          <div class="quiz-options" id="qz-options">
+            <!-- Option buttons will be generated here -->
+          </div>
+          
+          <div id="qz-feedback" class="feedback-msg hide">정답입니다! 🎉</div>
+          <button id="btn-qz-next" class="cute-btn primary hide block mt-4">다음 문제 ▶</button>
+        </section>
+
+        <!-- Spelling View -->
+        <section id="view-spelling" class="view">
+          <div class="progress-bar-container"><div class="progress-bar" id="sp-progress"></div></div>
+          <p class="progress-text" id="sp-progress-text">1 / 10</p>
+          
+          <div class="quiz-card">
+            <h3 class="quiz-word-ko" id="sp-word-ko">단어 뜻</h3>
+          </div>
+          
+          <div class="spelling-input-area">
+            <input type="text" id="sp-input" class="cute-input" placeholder="스펠링을 입력하세요" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+            <button id="btn-sp-submit" class="cute-btn primary">확인</button>
+          </div>
+          
+          <div id="sp-feedback" class="feedback-msg hide">정답입니다! 🎉</div>
+          <button id="btn-sp-next" class="cute-btn primary hide block mt-4">다음 문제 ▶</button>
+        </section>
+
+        <!-- Result View -->
+        <section id="view-result" class="view">
+          <h2 class="result-title">🎉 학습 완료! 🎉</h2>
+          <p class="result-msg" id="result-msg">참 잘했어요! 💖</p>
+          <button id="btn-result-home" class="cute-btn primary block mt-4">홈으로 돌아가기</button>
+        </section>
+
+      </main>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
