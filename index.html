@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/koko.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <title>청명고 6모 단어장</title>
+    <title>청명고6월모고단어시험</title>
     <!-- Cute Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
       <!-- Top Navigation / Header -->
       <header class="app-header">
         <button id="btn-home" class="nav-btn hide">🏠 홈으로</button>
-        <h1 id="app-title">✨ 청명고 6모 단어장 ✨</h1>
+        <h1 id="app-title">✨ 청명고6월모고단어시험 ✨</h1>
         <div class="header-spacer"></div>
       </header>
 
@@ -29,6 +29,13 @@
           
           <div class="chapter-grid" id="chapter-list">
             <!-- Chapter buttons will be generated here -->
+          </div>
+          
+          <div style="margin-top: 20px; padding: 15px; background: rgba(255, 255, 255, 0.5); border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <p class="subtitle" style="margin-top: 0; font-size: 1.1rem; color: var(--primary-color);">🚀 전체 단어 모아보기!</p>
+            <button class="cute-btn mode-btn block" data-mode="flashcard" data-chapter="all" style="margin-bottom: 10px; background-color: #ffd6e0; color: #d81159;">🃏 전체단어 플래시카드</button>
+            <button class="cute-btn mode-btn block" data-mode="quiz" data-chapter="all" style="margin-bottom: 10px; background-color: #ffd6e0; color: #d81159;">📝 전체단어 객관식 퀴즈</button>
+            <button class="cute-btn mode-btn block" data-mode="spelling" data-chapter="all" style="background-color: #ffd6e0; color: #d81159;">⌨️ 전체단어 스펠링 맞추기</button>
           </div>
           
           <div class="footer-msg">

@@ -121,6 +121,9 @@ function init() {
   modeButtons.forEach(btn => {
     btn.onclick = (e) => {
       currentMode = e.target.dataset.mode;
+      if (e.target.dataset.chapter) {
+        currentChapter = e.target.dataset.chapter;
+      }
       startMode();
     };
   });
@@ -184,7 +187,13 @@ function selectChapter(ch) {
 }
 
 function startMode() {
-  wordList = shuffle([...wordData[currentChapter]]);
+  if (currentChapter === 'all') {
+    let allWordsList = [];
+    Object.values(wordData).forEach(list => allWordsList.push(...list));
+    wordList = shuffle(allWordsList);
+  } else {
+    wordList = shuffle([...wordData[currentChapter]]);
+  }
   currentIndex = 0;
   score = 0;
 
